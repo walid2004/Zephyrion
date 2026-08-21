@@ -1,8 +1,10 @@
 import { useRef } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
+
 export function GradualSpacing({ text = 'Gradual Spacing' }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+
   return (
     <div
       className="flex"
@@ -10,8 +12,10 @@ export function GradualSpacing({ text = 'Gradual Spacing' }) {
         display: 'flex',
         justifyContent: 'center',
         flexWrap: 'wrap',
-        margin: '2px 0 10px 0',
-        flexShrink: 0
+        margin: '2px 0 8px 0',
+        padding: '0 8px',
+        flexShrink: 0,
+        boxSizing: 'border-box'
       }}
     >
       <AnimatePresence>
@@ -26,7 +30,7 @@ export function GradualSpacing({ text = 'Gradual Spacing' }) {
             style={{
               margin: 0,
               padding: 0,
-              fontSize: 'clamp(1rem, 2.2vw, 1.35rem)',
+              fontSize: 'clamp(0.85rem, 2.4vw, 1.35rem)',
               fontStyle: 'italic',
               fontWeight: 700,
               color: '#ffffff'
@@ -39,4 +43,5 @@ export function GradualSpacing({ text = 'Gradual Spacing' }) {
     </div>
   );
 }
+
 export default GradualSpacing;
