@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.rohi {
+  background-image: linear-gradient(160deg, #000000 0%, #394d4b 100%);
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  max-width: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+  position: relative;
+  border-width: 0px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+li {
+  float: left;
+  position: relative;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 14px;
+  text-decoration: none;
+  position: relative;
+  font-size: 14px;
+}
+
+li a:hover {
+  background-color: #ffffff;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+  color: black;
+  position: relative;
+}
+
+.startbutton {
+  border-radius: 20px;
+  color: white;
+  background-color: black;
+  border: none;
+  width: 140px;
+  height: 38px;
+  font-size: 18px;
+  margin-top: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.startbutton:hover {
+  color: #000000;
+  background-color: white;
+}
+
+.navbar {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+h1 {
+  font-family: "Black Ops One", system-ui;
+  font-weight: 900;
+  font-style: italic;
+  color: #ffffff;
+  text-align: center;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  position: relative;
+  margin: 6px 0 2px 0;
+}
+
+h2 {
+  font-family: "Black Ops One", system-ui;
+  font-style: italic;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
+.digga2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.modeswtich {
+  position: relative;
+  border: none;
+}
+
+#digga {
+  margin: 0;
+}
+
+.mfcontainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mfcontainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mfcontainer::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.input:focus {
+  outline: none;
+}

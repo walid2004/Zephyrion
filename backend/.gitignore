@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+key/
+package-lock.json
+
+# logs
+logs/
+*.log
+npm-debug.log*
+
+# env files
+.env
+.env.local
+.env.*.local
+
+# system files
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Azure or build artifacts
+dist/
+build/
+*.zip
