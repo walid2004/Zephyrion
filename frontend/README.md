@@ -1,12 +1,37 @@
-# React + Vite
+# Zephyrion Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The client-side interface for the Zephyrion automotive finding platform. Built with React 19, Vite, and Framer Motion.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Real-time communication via Socket.IO client interface.
+- Dynamic theme management supporting Light and Dark modes.
+- Responsive layout constrained to single-page viewport dimensions.
+- Client-side SPA routing for Home, About, Contact, and Documentation views.
+- Context-aware quick action controls for search finalization, question skipping, filter summaries, and session resets.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start Vite development server
+npm run dev
+
+# Run ESLint validation
+npm run lint
+
+# Compile production bundle
+npm run build
+```
+
+---
+
+## Environment Variables
+
+- `VITE_BACKEND_URL`: Optional URL of the backend service. If omitted, the client automatically defaults to `window.location.origin` in production and `http://localhost:4000` in development.

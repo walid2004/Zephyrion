@@ -2,10 +2,11 @@
   "name": "zephyrion-root",
   "version": "1.0.0",
   "private": true,
-  "description": "Zephyrion Car Search Chatbot",
+  "description": "Zephyrion Car Search Platform",
   "scripts": {
     "dev:backend": "npm --prefix backend start",
     "dev:frontend": "npm --prefix frontend run dev",
+    "test:backend": "npm --prefix backend test",
     "build:frontend": "npm --prefix frontend run build",
     "lint:frontend": "npm --prefix frontend run lint"
   },
