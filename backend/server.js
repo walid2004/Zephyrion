@@ -21,7 +21,7 @@ app.use(express.static(join(__dirname, 'public')));
 
 registerChatHandlers(io);
 
-app.get('*', (req, res) => {
+app.use((req, res) => {
   res.sendFile(join(__dirname, 'public', 'index.html'));
 });
 
