@@ -1,5 +1,4 @@
 export const PORT = process.env.PORT || 4000;
-export const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 export const BASE_SEARCH_URL = 'https://hey.car/gebrauchtwagen?';
 export const STRING_NUMBERS = [
   'zero',
