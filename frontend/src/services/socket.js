@@ -1,12 +1,23 @@
 import io from 'socket.io-client';
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:4000' : '');
+function getBackendUrl() {
+  if (typeof window !== 'undefined') {
+    if (import.meta.env.VITE_BACKEND_URL) {
+      return import.meta.env.VITE_BACKEND_URL;
+    }
+    if (import.meta.env.DEV) {
+      return 'http://localhost:4000';
+    }
+    return window.location.origin;
+  }
+  return '';
+}
 
-const socket = io(backendUrl, {
+const socket = io(getBackendUrl(), {
   transports: ['websocket', 'polling'],
-  reconnectionAttempts: 5,
+  reconnectionAttempts: 10,
   reconnectionDelay: 1000,
-  reconnectionDelayMax: 5000,
+  reconnectionDelayMax: 5000
 });
 
 export default socket;
