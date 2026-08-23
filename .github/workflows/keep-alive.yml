@@ -1,0 +1,27 @@
+name: Keep Alive Render Service
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping-render:
+    name: Ping Render Instance
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Health Endpoint
+        run: |
+          echo "Pinging Zephyrion Render instance at $(date -u)..."
+          RESPONSE=$(curl -s -w "\nHTTP_STATUS:%{http_code}" --retry 3 --retry-delay 5 --max-time 30 -L "https://zephyrion-hglp.onrender.com/health" || true)
+          echo "$RESPONSE"
+          HTTP_STATUS=$(echo "$RESPONSE" | tr -d '\r' | grep "HTTP_STATUS" | cut -d':' -f2)
+          
+          if [ "$HTTP_STATUS" = "200" ]; then
+            echo "Ping successful! Service is active and warm."
+          else
+            echo "Health endpoint returned status $HTTP_STATUS, pinging root URL..."
+            curl -s -f -L --retry 3 --retry-delay 5 --max-time 30 "https://zephyrion-hglp.onrender.com/" > /dev/null
+            echo "Root ping complete."
+          fi

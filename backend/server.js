@@ -19,6 +19,10 @@ const io = new Server(httpServer, {
 
 app.use(express.static(join(__dirname, 'public')));
 
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', uptime: process.uptime(), timestamp: new Date().toISOString() });
+});
+
 registerChatHandlers(io);
 
 app.use((req, res) => {
